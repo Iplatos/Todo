@@ -19,13 +19,10 @@ const slice = createSlice({
       addTodolistAC(state,action:PayloadAction<{ todolist: TodolistType}>){
 state.push({...action.payload.todolist, filter:"all", entityStatus:"idle"})
       },
-
-
         changeTodolistFilterAC(state , action:PayloadAction<{ id: string, filter: FilterValuesType}>){
             const index=state.findIndex(tl=>tl.id===action.payload.id)
             if (index !==-1){
                 state[index].filter= action.payload.filter
-
         }
         },
         changeTodolistEntityStatusAC(state , action:PayloadAction<{id: string, status: RequestStatusType}>){
